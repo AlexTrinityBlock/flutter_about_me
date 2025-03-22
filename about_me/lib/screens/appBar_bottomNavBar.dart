@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/homeWidgets.dart';
+import '../widgets/storyWidgets.dart';
+import '../widgets/favoriteWidgets.dart';
 
 // 主函數
 class HomePage extends StatefulWidget {
@@ -27,9 +29,9 @@ class _HomePageState extends State<HomePage> {
     // 首頁內容
     HomeWidgets(),
     // 故事頁面內容
-    Center(child: Text('Story Page Content')),
+    StoryWidgets(),
     // 最愛頁面內容
-    Center(child: Text('Account Page Content')),
+    FavoriteWidgets(),
   ];
 
   @override
@@ -50,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.black, // 底部導航列的背景色
         selectedItemColor: Colors.white, // 選取時的圖示與文字顏色
         unselectedItemColor: Colors.grey,
-        currentIndex: 0, // 設定當前選取的索引
+        currentIndex: _selectedIndex, // 設定當前選取的索引
         onTap: _onItemTapped, // 點擊事件
         // 選單按鈕
         items: const [

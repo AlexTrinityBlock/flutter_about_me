@@ -13,22 +13,32 @@ class HomeWidgets extends StatelessWidget {
             // 頭像上方的空白與圓形邊框
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              // 圓形邊框容器
-              child: Container(
-                width: 200,
-                height: 200,
-                // 圓形邊框
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: ClipOval(
-                  child: Image(
-                    image: AssetImage('assets/images/alex_raven.jpg'),
-                    fit: BoxFit.cover,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // 畫框：外層 Container 畫出邊框效果
+                  Container(
+                    width: 210,
+                    height: 210,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.grey, // 畫框的顏色
+                        width: 20.0,          // 畫框的寬度
+                      ),
+                    ),
                   ),
-                ),
+                  // 頭像圖片：ClipOval 裁切成圓形
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/images/alex_raven.jpg',
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
               ),
-              // 自我介紹文字
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -45,9 +55,9 @@ class HomeWidgets extends StatelessWidget {
                   ),
                   // 自我介紹
                   Text(
-                    '我很喜歡開發，在我的旅途中幫很多夥伴解決了各式的問題，但是始終沒有機會將職位掛上開發，很遺憾。',
+                    '我很喜歡開發，在我的旅途中幫很多夥伴解決了各式的問題，但是始終沒有機會將職位寫上開發，很遺憾。',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       color: Colors.grey,
                     ),
                     textAlign: TextAlign.center,
