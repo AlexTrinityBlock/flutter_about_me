@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'screens/appBar_bottomNavBar.dart';
 
 // 主函數
 void main() {
@@ -18,7 +18,9 @@ class AboutMeApp extends StatelessWidget {
       title: 'About Me: Alex Raven',
       theme: ThemeData(
         // 主題色彩
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        // 深色Body背景
+        scaffoldBackgroundColor: Colors.grey[900],
       ),
       // 導入首頁
       home: const HomePage(title: '關於我 Alex Raven'),
